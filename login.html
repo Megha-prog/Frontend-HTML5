@@ -1,0 +1,95 @@
+<!DOCTYPE <!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script type="text/javascript">
+        var uname = " ";
+        var pwd = " ";
+        function Session() {
+            uname = document.getElementById("name").value;
+            pwd = document.getAnimations("password").value;
+            if (typeof (Storage) != undefined) {
+                sessionStorage.setItem("UNAME", uname);
+                sessionStorage.setItem("PASSWORD", pwd);
+                alert("Data stored in Session Storage");
+            }
+            else {
+                alert("Browser does not support storage");
+            }
+        }
+
+        function Local() {
+            uname = document.getElementById("name").value;
+            pwd = document.getAnimations("password").value;
+            if (typeof (Storage) != undefined) {
+                localStorage.setItem("UNAME", uname);
+                localStorage.setItem("PASSWORD", pwd);
+                alert("Data stored in Local Storage");
+            }
+            else {
+                alert("Browser does not support storage");
+            }
+
+        }
+        function Show() {
+            if (localStorage.getItem("UNAME") != "" && localStorage.getItem("PASSWORD") != "") {
+                alert("Name" + localStorage.getItem("UNAME"));
+                alert("Pwd:" + localStorage.getItem("PASSWORD"));
+            }
+            else {
+                alert("no data present  in local storage")
+            }
+        }
+        function Show() {
+            if (sessionStorage.getItem("UNAME") != "null " && sessionStorage.getItem("PASSWORD") != "null") {
+                alert("Name" + sessionStorage.getItem("UNAME"));
+                alert("Pwd:" + sessionStorage.getItem("PASSWORD"));
+            }
+            else {
+                alert("No data present in Session Storage ")
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+    <form>
+        <table boarder="5">
+            <tr>
+                <td>Enter Name:</td>
+                <td><input type="text" id="name" placeholder="Enter Name Here" required></td>
+
+
+            </tr>
+            <tr>
+
+                <td> Enter Password</td>
+                <td><input type="password" id="password" required placeholder="Enter password here" required></td>
+
+            </tr>
+
+            <tr>
+
+
+                <td><input type="button" onclick="Session()" value="Session Storage"></td>
+                <td><input type="button" onclick="Local()" value="Local Storage"></td>
+            </tr>
+
+            <tr>
+
+                <td><input type="button" onclick="Show()" value="Show Data" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>
